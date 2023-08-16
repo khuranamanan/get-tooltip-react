@@ -1,7 +1,7 @@
 {
   "name": "get-tooltip-react",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,7 @@
     ".": {
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js",
-      "style": "./style.css"
+      "style": "./dist/style.css"
     }
   },
   "files": [
