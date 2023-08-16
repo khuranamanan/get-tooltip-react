@@ -7,7 +7,7 @@ export default function App(): JSX.Element {
 
       <div className="container">
         <Tooltip
-          tooltipText="This is a tooltip!"
+          tooltiptext="This is a tooltip!"
           position="top"
           bg="#172554"
           textColor="#93c5fd"
@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
           <button className="tooltip-btn">Hover Me</button>
         </Tooltip>
 
-        <Tooltip tooltipText="Another tooltip">
+        <Tooltip tooltiptext="Another tooltip">
           <span>Hover over me too!</span>
         </Tooltip>
       </div>

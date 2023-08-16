@@ -3,7 +3,7 @@ import "./Tooltip.css";
 
 interface TooltipProps {
   children: ReactNode;
-  tooltipText: string;
+  tooltiptext: string;
   position?: "top" | "bottom" | "left" | "right";
   bg?: string;
   textColor?: string;
@@ -19,7 +19,7 @@ type TooltipStyles = CSSProperties & {
 
 export function Tooltip({
   children,
-  tooltipText,
+  tooltiptext,
   position,
   bg,
   textColor,
@@ -35,8 +35,8 @@ export function Tooltip({
   return (
     <div
       className="tooltip-wrapper"
-      data-tooltipText={tooltipText}
-      aria-label={tooltipText}
+      data-tooltipText={tooltiptext}
+      aria-label={tooltiptext}
     >
       {children}
       <span
@@ -44,7 +44,7 @@ export function Tooltip({
         data-tooltipPosition={position}
         style={tooltipStyles}
       >
-        {tooltipText}
+        {tooltiptext}
       </span>
     </div>
   );
