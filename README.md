@@ -1,27 +1,62 @@
-# React + TypeScript + Vite
+# Get Tooltip React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![npm](https://img.shields.io/npm/v/get-tooltip-react)](https://www.npmjs.com/package/get-tooltip-react)
+[![GitHub](https://img.shields.io/github/license/khuranamanan/get-tooltip-react)](LICENSE)
 
-Currently, two official plugins are available:
+A customizable tooltip component for React applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+You can install the `get-tooltip-react` package using npm:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```sh
+npm install get-tooltip-react
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+Import the Tooltip component and use it in your React application:
+
+```js
+import React from "react";
+import { Tooltip } from "get-tooltip-react";
+import "get-tooltip-react/dist/style.css"; // Don't forget to import the CSS for styling
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Tooltip React Component</h1>
+
+      <div className="container">
+        <Tooltip
+          tooltipText="This is a tooltip!"
+          position="top"
+          bg="#172554"
+          textColor="#93c5fd"
+          delay={500}
+          arrow
+        >
+          <button className="tooltip-btn">Hover Me</button>
+        </Tooltip>
+
+        <Tooltip tooltipText="Another tooltip">
+          <span>Hover over me too!</span>
+        </Tooltip>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Props
+The Tooltip component accepts the following props:
+
+- children: ReactNode (required) - The content that triggers the tooltip.
+- tooltipText: string (required) - The text to display in the tooltip.
+- position: one of ["top", "bottom", "left", "right"] - Position of the tooltip (default: "bottom").
+- bg: string - Background color of the tooltip (default: "black").
+- textColor: string - Text color of the tooltip (default: "white").
+- delay: number - Delay before showing the tooltip (in milliseconds, default: 0).
+- arrow: boolean - Whether to show an arrow on the tooltip (default: false).
