@@ -17,7 +17,7 @@ type TooltipStyles = CSSProperties & {
   "--tooltip-delay"?: string;
 };
 
-export function Tooltip({
+export default function Tooltip({
   children,
   tooltiptext,
   position,
