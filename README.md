@@ -29,7 +29,7 @@ function App() {
 
       <div className="container">
         <Tooltip
-          tooltipText="This is a tooltip!"
+          tooltiptext="This is a tooltip!"
           position="top"
           bg="#172554"
           textColor="#93c5fd"
@@ -54,7 +54,7 @@ export default App;
 The Tooltip component accepts the following props:
 
 - children: ReactNode (required) - The content that triggers the tooltip.
-- tooltipText: string (required) - The text to display in the tooltip.
+- tooltiptext: string (required) - The text to display in the tooltip.
 - position: one of ["top", "bottom", "left", "right"] - Position of the tooltip (default: "bottom").
 - bg: string - Background color of the tooltip (default: "black").
 - textColor: string - Text color of the tooltip (default: "white").
