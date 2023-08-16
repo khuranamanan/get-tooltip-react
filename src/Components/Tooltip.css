@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  z-index: 5;
+  background-color: var(--tooltip-bg, black);
+  color: var(--tooltip-text-color, white);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition-delay: var(--tooltip-delay, 0s);
+  white-space: nowrap;
+}
+
+.tooltip-text[data-tooltipPosition="top"] {
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-text[data-tooltipPosition="bottom"] {
+  top: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-text[data-tooltipPosition="left"] {
+  top: 50%;
+  left: auto;
+  right: calc(100% + 7px);
+  transform: translateY(-50%);
+}
+
+.tooltip-text[data-tooltipPosition="right"] {
+  top: 50%;
+  left: calc(100% + 7px);
+  transform: translateY(-50%);
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-text.tooltip-arrow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px;
+}
+
+.tooltip-text[data-tooltipPosition="top"].tooltip-arrow::before {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: var(--tooltip-bg, black) transparent transparent transparent;
+}
+
+.tooltip-text[data-tooltipPosition="bottom"].tooltip-arrow::before {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: transparent transparent var(--tooltip-bg, black) transparent;
+}
+
+.tooltip-text[data-tooltipPosition="left"].tooltip-arrow::before {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-color: transparent transparent transparent var(--tooltip-bg, black);
+}
+
+.tooltip-text[data-tooltipPosition="right"].tooltip-arrow::before {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-color: transparent var(--tooltip-bg, black) transparent transparent;
+}
